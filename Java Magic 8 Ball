@@ -1,0 +1,103 @@
+import java.util.Random; // Import the Random class for generating random numbers
+import java.util.Scanner; // Import the Scanner class for getting user input
+
+public class Magic8Ball { // Defines the classed named Magic8Ball, so the code stays within the class
+    public static void main(String[] args) { // Where the execution starts
+        // Create a Scanner object to read your input from the console
+        Scanner scanner = new Scanner(System.in);
+        
+        // Create a Random object to generate random numbers
+        Random random = new Random();
+        
+        // Infinite loop to keep the game running until they decide to quit
+        while (true) {
+            // Tells the user to ask a question or press Enter to quit
+            System.out.print("Ask the magic 8 ball a question: (press enter to quit) ");
+            
+            // Reads the user's input and stores it
+            String question = scanner.nextLine();
+            
+            // Checks to see if the user pressed enter without typing anything
+            if (question.isEmpty()) {
+                // Tells the user that the game is stopping
+                System.out.println("Stopping the Game.");
+                // Exit the loop and ends the game
+                break;
+            }
+            
+            // Creates a random number between 1 and 20
+            int answer = random.nextInt(20) + 1;
+            
+            // Use a switch to decide what response based on the random number chosen
+            switch (answer) {
+                case 1:
+                    System.out.println("It is certain."); // Response for case 1
+                    break;
+                case 2:
+                    System.out.println("It is decidedly so."); // Response for case 2
+                    break;
+                case 3:
+                    System.out.println("Without a doubt."); // Response for case 3
+                    break;
+                case 4:
+                    System.out.println("Yes definitely."); // Response for case 4
+                    break;
+                case 5:
+                    System.out.println("You may rely on it."); // Response for case 5
+                    break;
+                case 6:
+                    System.out.println("As I see it, yes."); // Response for case 6
+                    break;
+                case 7:
+                    System.out.println("Most likely."); // Response for case 7
+                    break;
+                case 8:
+                    System.out.println("Outlook good."); // Response for case 8
+                    break;
+                case 9:
+                    System.out.println("Yes."); // Response for case 9
+                    break;
+                case 10:
+                    System.out.println("Signs point to yes."); // Response for case 10
+                    break;
+                case 11:
+                    System.out.println("Reply hazy, try again."); // Response for case 11
+                    break;
+                case 12:
+                    System.out.println("Ask again later."); // Response for case 12
+                    break;
+                case 13:
+                    System.out.println("Better not tell you now."); // Response for case 13
+                    break;
+                case 14:
+                    System.out.println("Cannot predict now."); // Response for case 14
+                    break;
+                case 15:
+                    System.out.println("Concentrate and ask again."); // Response for case 15
+                    break;
+                case 16:
+                    System.out.println("Don't count on it."); // Response for case 16
+                    break;
+                case 17:
+                    System.out.println("My reply is no."); // Response for case 17
+                    break;
+                case 18:
+                    System.out.println("My sources say no."); // Response for case 18
+                    break;
+                case 19:
+                    System.out.println("Outlook not so good."); // Response for case 19
+                    break;
+                case 20:
+                    System.out.println("Very doubtful."); // Response for case 20
+                    break;
+                default:
+                    // Line just in case to handle some error
+                    System.out.println("Something went wrong!");
+                    break;
+            }
+        }
+        
+        // Close the Scanner object
+        scanner.close();
+    }
+}
